@@ -13,12 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bayes": "0.0.7",
-    "bayes-classifier": "0.0.5",
     "classificator": "^0.3.3",
     "mz": "^2.7.0",
-    "node-nlp": "^3.1.1",
-    "node-snowball": "^0.4.0",
     "ramda": "^0.26.1"
   }
 }
