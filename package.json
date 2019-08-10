@@ -7,14 +7,26 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-unit": "ava test/unit/*.js",
+    "test-serial": "ava test/integration/*.js --serial",
+    "test": "standard && npm run test-unit && npm run test-serial",
+    "lint": "standard",
+    "lint-fix": "standard --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ava": "^2.2.0",
     "classificator": "^0.3.3",
     "mz": "^2.7.0",
-    "ramda": "^0.26.1"
+    "nyc": "^14.1.1",
+    "ramda": "^0.26.1",
+    "standard": "^13.1.0"
+  },
+  "standard": {
+    "ignore": [
+      "lib/category/training_data.js"
+    ]
   }
 }

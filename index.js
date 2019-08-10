@@ -1,7 +1,11 @@
-const category = require('./lib/category')
+const classificator = require('classificator')
+const Bayes = require('./lib/category/bayes')(classificator)
+const Category = require('./lib/category')(Bayes)
 
-module.exports = {
-  extractCategoryFromCandidates: category.extractFromCandidates,
-  extractCategoryFromUrl: category.extractFromUrl,
-  extractCategoryFromContent: category.extractFromContent
+module.exports = function () {
+  return {
+    extractCategoryFromCandidates: Category.extractFromCandidates,
+    extractCategoryFromUrl: Category.extractFromUrl,
+    extractCategoryFromContent: Category.extractFromContent
+  }
 }
